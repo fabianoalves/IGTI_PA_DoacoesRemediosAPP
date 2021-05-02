@@ -1,6 +1,8 @@
 import 'package:doacoes_remedios/models/instituicao.model.dart';
 import 'package:flutter/material.dart';
 
+import '../style.colors.dart';
+
 const List<Instituicao> opcoes = const <Instituicao>[
   const Instituicao(titulo: 'SUS são paulo', 
   endereco: 'AV. Flamingo, 61 - Vila nova curuça - São paulo/SP', 
@@ -32,6 +34,7 @@ class _InstituicaoPesquisaResultPageState extends State<InstituicaoPesquisaResul
         backgroundColor: Color.fromRGBO(186, 213, 217, 1),
         appBar: AppBar(
           title: Text('Resultado da Pesquisa'),
+          backgroundColor: ThemeColors.AppBarColor,
           automaticallyImplyLeading: true,
           leading: IconButton(icon:Icon(Icons.arrow_back,color: Colors.white,),
             onPressed:() => Navigator.pop(context, false),

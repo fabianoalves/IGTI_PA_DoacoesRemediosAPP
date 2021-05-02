@@ -1,6 +1,8 @@
 import 'package:doacoes_remedios/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
+import '../style.colors.dart';
+
 
 class Opcao {
   const Opcao({this.titulo, this.icon, this.rota});
@@ -57,6 +59,7 @@ class _InstituicaoPageState extends State<InstituicaoPage> {
         appBar: AppBar(
           title: Text('Instituições'),
           automaticallyImplyLeading: false,
+          backgroundColor: ThemeColors.AppBarColor,
         ),
         /*floatingActionButton: new FloatingActionButton(
           child: new Icon(Icons.fullscreen_exit),

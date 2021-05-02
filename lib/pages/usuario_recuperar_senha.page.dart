@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../style.colors.dart';
+
 class UsuarioRecuperarSenhaPage extends StatefulWidget {
   @override
   _UsuarioRecuperarSenhaPageState createState() => _UsuarioRecuperarSenhaPageState();
@@ -15,6 +17,7 @@ class _UsuarioRecuperarSenhaPageState extends State<UsuarioRecuperarSenhaPage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('Recuperar Senha'),
+          backgroundColor: ThemeColors.AppBarColor,
         ),
         body: Padding(
           padding: EdgeInsets.all(10),
@@ -27,10 +30,10 @@ class _UsuarioRecuperarSenhaPageState extends State<UsuarioRecuperarSenhaPage> {
                   controller: _emailController,
                   autofocus: true,
                   keyboardType: TextInputType.emailAddress,
-                  style: new TextStyle(color: Colors.black87, fontSize: 20),
+                  style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                   decoration: InputDecoration(
                       labelText: "E-mail",
-                      labelStyle: TextStyle(color: Colors.black87)),
+                      labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                 ),
                 Divider(),
 
@@ -65,7 +68,7 @@ class _UsuarioRecuperarSenhaPageState extends State<UsuarioRecuperarSenhaPage> {
                       "Enviar",
                       style: TextStyle(color: Colors.white),
                     ),
-                    color: Colors.green,
+                    color: ThemeColors.PrimaryColor,
                   ),
                 ),
               ],

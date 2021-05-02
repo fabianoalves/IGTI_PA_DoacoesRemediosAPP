@@ -3,6 +3,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+
+import '../style.colors.dart';
+
 Future<Usuario> createUsuario(String nome, String email, String senha) async {
   final http.Response response = await http.post(
     'http://10.0.0.107:5000/api/usuarios', //
@@ -59,6 +62,7 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('Novo Cadastro'),
+          backgroundColor: ThemeColors.AppBarColor,
         ),
         body: Padding(
           padding: EdgeInsets.all(10),
@@ -71,20 +75,20 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
                   controller: _nomeController,
                   autofocus: true,
                   keyboardType: TextInputType.text,
-                  style: new TextStyle(color: Colors.black87, fontSize: 20),
+                  style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                   decoration: InputDecoration(
                       labelText: "Nome",
-                      labelStyle: TextStyle(color: Colors.black87)),
+                      labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                 ),
                 Divider(),
                 TextFormField(
                   controller: _emailController,
                   autofocus: true,
                   keyboardType: TextInputType.emailAddress,
-                  style: new TextStyle(color: Colors.black87, fontSize: 20),
+                  style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                   decoration: InputDecoration(
                       labelText: "E-mail",
-                      labelStyle: TextStyle(color: Colors.black87)),
+                      labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                 ),
                 Divider(),
                 TextFormField(
@@ -92,10 +96,10 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
                   autofocus: true,
                   obscureText: true,
                   keyboardType: TextInputType.text,
-                  style: new TextStyle(color: Colors.black87, fontSize: 20),
+                  style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                   decoration: InputDecoration(
                       labelText: "Senha",
-                      labelStyle: TextStyle(color: Colors.black87)),
+                      labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                 ),
                 Divider(),
                 ButtonTheme(
@@ -150,7 +154,7 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
                       "Cadastrar",
                       style: TextStyle(color: Colors.white),
                     ),
-                    color: Colors.green,
+                    color: ThemeColors.PrimaryColor,
                   ),
                 ),
               ],

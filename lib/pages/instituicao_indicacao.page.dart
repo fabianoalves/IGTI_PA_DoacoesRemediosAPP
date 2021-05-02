@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../style.colors.dart';
+
+
 
 
 class InstituicaoIndicacaoPage extends StatefulWidget {
@@ -19,6 +22,7 @@ class _InstituicaoIndicacaoPageState extends State<InstituicaoIndicacaoPage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('Indicação de Instituição'),
+          backgroundColor: ThemeColors.AppBarColor,
         ),
         body: SingleChildScrollView(child:
           Padding(
@@ -32,38 +36,38 @@ class _InstituicaoIndicacaoPageState extends State<InstituicaoIndicacaoPage> {
                     controller: _nomeController,
                     autofocus: true,
                     keyboardType: TextInputType.text,
-                    style: new TextStyle(color: Colors.black87, fontSize: 20),
+                    style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                     decoration: InputDecoration(
                         labelText: "Nome",
-                        labelStyle: TextStyle(color: Colors.black87)),
+                        labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                   ),
                   Divider(),
                   TextFormField(
                     controller: _telController,                  
                     keyboardType: TextInputType.text,
-                    style: new TextStyle(color: Colors.black87, fontSize: 20),
+                    style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                     decoration: InputDecoration(
                         labelText: "Telefone",
-                        labelStyle: TextStyle(color: Colors.black87)),
+                        labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                   ),
                   Divider(),
                   TextFormField(
                     controller: _cepController,
                   
                     keyboardType: TextInputType.text,
-                    style: new TextStyle(color: Colors.black87, fontSize: 20),
+                    style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                     decoration: InputDecoration(
                         labelText: "CEP",
-                        labelStyle: TextStyle(color: Colors.black87)),
+                        labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                   ),
                   Divider(),
                   TextFormField(
                     controller: _endController,                  
                     keyboardType: TextInputType.text,
-                    style: new TextStyle(color: Colors.black87, fontSize: 20),
+                    style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                     decoration: InputDecoration(
                         labelText: "Endereço",
-                        labelStyle: TextStyle(color: Colors.black87)),
+                        labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                   ),                
                   Divider(),
                   ButtonTheme(
@@ -118,7 +122,7 @@ class _InstituicaoIndicacaoPageState extends State<InstituicaoIndicacaoPage> {
                         "Enviar",
                         style: TextStyle(color: Colors.white),
                       ),
-                      color: Colors.green,
+                      color: ThemeColors.PrimaryColor,
                     ),
                   ),
                 ],

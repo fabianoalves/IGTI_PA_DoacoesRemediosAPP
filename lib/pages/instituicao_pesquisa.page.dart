@@ -1,6 +1,8 @@
 import 'package:doacoes_remedios/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
+import '../style.colors.dart';
+
 
 class InstituicaoPesquisaPage extends StatefulWidget {
   @override
@@ -21,6 +23,7 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('Pesquisa de Instituições'),
+          backgroundColor: ThemeColors.AppBarColor,
         ),
 
         body: Padding(
@@ -34,10 +37,10 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                   controller: _nomeController,
                   autofocus: true,
                   keyboardType: TextInputType.text,
-                  style: new TextStyle(color: Colors.black87, fontSize: 20),
+                  style: new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
                   decoration: InputDecoration(
                       labelText: "Nome",
-                      labelStyle: TextStyle(color: Colors.black87)),
+                      labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
                 ),
                 Divider(),
 
@@ -68,7 +71,7 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                     ),  
                   ),          
                   elevation: 2,
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: TextStyle(color: ThemeColors.LabelInputForm, fontSize: 16),
                   isDense: true,
                   iconSize: 30.0,
                   iconEnabledColor: Colors.black,
@@ -103,7 +106,7 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                     ),  
                   ),          
                   elevation: 2,
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: TextStyle(color: ThemeColors.LabelInputForm, fontSize: 16),
                   isDense: true,
                   iconSize: 30.0,
                   iconEnabledColor: Colors.black,
@@ -133,7 +136,7 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                     ),  
                   ),          
                   elevation: 2,
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: TextStyle(color: ThemeColors.LabelInputForm, fontSize: 16),
                   isDense: true,
                   iconSize: 30.0,
                   iconEnabledColor: Colors.black,
@@ -152,7 +155,7 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                     child: Text("Pesquisar",
                       style: TextStyle(color: Colors.white),
                     ),
-                    color: Colors.green,
+                    color: ThemeColors.PrimaryColor,
                   ),
                 ),
 
