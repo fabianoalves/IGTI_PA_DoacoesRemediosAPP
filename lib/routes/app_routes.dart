@@ -6,6 +6,6 @@ class AppRoutes {
   static const INSTITUICAO_PESQUISA = '/instituicao_pesquisa';
   static const INSTITUICAO_PESQUISA_RESULT = '/instituicao_pesquisa_resultado';
   static const INSTITUICAO_INDICACAO = '/instituicao_indicacao';
-  
+  static const MAPA = '/mapa';
   
 }

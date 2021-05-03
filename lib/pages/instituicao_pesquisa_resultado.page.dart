@@ -1,18 +1,19 @@
 import 'package:doacoes_remedios/models/instituicao.model.dart';
+import 'package:doacoes_remedios/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import '../style.colors.dart';
 
 const List<Instituicao> opcoes = const <Instituicao>[
-  const Instituicao(titulo: 'SUS são paulo', 
+  const Instituicao(titulo: 'UBS são paulo', 
   endereco: 'AV. Flamingo, 61 - Vila nova curuça - São paulo/SP', 
   telefone: '(11) 2035-3155',
   cep: '08031-000'),
 
-    const Instituicao(titulo: 'SUS Curuça', 
-  endereco: 'AV. Flamingo, 61 - Vila nova curuça - São paulo/SP', 
-  telefone: '(11) 2035-3155',
-  cep: '08031-000'),
+    const Instituicao(titulo: 'UBS Curuçá Velha', 
+  endereco: 'Rua Moriçoca, 01 - São Miguel, São Paulo - SP', 
+  telefone: '(11) 2035-3152',
+  cep: '08030-500'),
 
 
 ];
@@ -51,9 +52,7 @@ class _InstituicaoPesquisaResultPageState extends State<InstituicaoPesquisaResul
   }
 
   Widget _instituicaoCard(BuildContext context, int index) {
-    return InkWell(      
-      child: Card( 
-        
+    return  Card( 
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(               
@@ -67,10 +66,6 @@ class _InstituicaoPesquisaResultPageState extends State<InstituicaoPesquisaResul
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child:Text("Tel: " + opcoes[index].telefone, style: TextStyle(color: Colors.grey, fontSize: 18)),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
                 child:Text(opcoes[index].endereco, style: TextStyle(color: Colors.grey, fontSize: 18)),
               ),
 
@@ -78,14 +73,30 @@ class _InstituicaoPesquisaResultPageState extends State<InstituicaoPesquisaResul
                 alignment: Alignment.centerLeft,              
                 child:Text("CEP: " + opcoes[index].cep, style: TextStyle(color: Colors.grey, fontSize: 18)),
               ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child:Text("Tel: " + opcoes[index].telefone, style: TextStyle(color: Colors.grey, fontSize: 18)),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: ButtonTheme(
+                  height: 40.0,
+                  child: RaisedButton(
+                    onPressed: () => {
+                      Navigator.of(context).pushNamed(AppRoutes.MAPA)
+                    },
+                    child: Text("Ver Mapa",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: ThemeColors.PrimaryColor,
+                  ),
+                ),
+              ),
                 
             ],
           ),
         ),
-      ),
-      onTap: () => {
-        
-      },
-    );
+      );
+
   }
 }

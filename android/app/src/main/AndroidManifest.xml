@@ -9,6 +9,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="doacoes_remedios"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDMNA2Ib-fqfQeCaPtbSxGZ2lVx73vyBB4" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

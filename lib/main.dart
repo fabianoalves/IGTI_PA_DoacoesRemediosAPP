@@ -2,6 +2,7 @@ import 'package:doacoes_remedios/pages/instituicao.page.dart';
 import 'package:doacoes_remedios/pages/instituicao_indicacao.page.dart';
 import 'package:doacoes_remedios/pages/instituicao_pesquisa.page.dart';
 import 'package:doacoes_remedios/pages/instituicao_pesquisa_resultado.page.dart';
+import 'package:doacoes_remedios/pages/map.page.dart';
 import 'package:doacoes_remedios/pages/splash.page.dart';
 import 'package:doacoes_remedios/pages/usuario_recuperar_senha.page.dart';
 import 'package:doacoes_remedios/routes/app_routes.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.INSTITUICAO_PESQUISA_RESULT: (_) => InstituicaoPesquisaResultPage(),
         AppRoutes.INSTITUICAO_INDICACAO: (_) => InstituicaoIndicacaoPage(),
         AppRoutes.USER_RECUPERAR_SENHA: (_) => UsuarioRecuperarSenhaPage(),
+        AppRoutes.MAPA: (_) => MapPage(),
       },
     );
   }
