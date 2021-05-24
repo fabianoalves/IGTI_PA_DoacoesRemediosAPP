@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+//import 'package:permission/permission.dart';
+//import 'package:permission_handler/permission_handler.dart';
 
 import '../style.colors.dart';
 
@@ -34,9 +37,40 @@ class _MapPageState extends State<MapPage> {
     
   }
 
+  /*void setPermissions() async{
+    Map<PermissionGroup, PermissionStatus> permissions =
+    await PermissionHandler().requestPermissions([PermissionGroup.location]);
+  }*/
+/*
+  void _getCurrentLocation() {
+    //setPermissions()
+    debugPrint("teste");
+    final Geolocator _geolocator = Geolocator()
+      ..forceAndroidLocationManager = true;
+    String _stringPosition = "";
+    _geolocator.checkGeolocationPermissionStatus().then((
+        GeolocationStatus _locationStatus) {
+      if (_locationStatus == GeolocationStatus.granted) {
+        _geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+            .then((Position position) {
+          setState(() {
+            _stringPosition =
+            'Altitude: ${position.altitude} Longitude: ${position.longitude}';
+            debugPrint(_stringPosition);
+
+          });
+        }).catchError((e) {
+          _stringPosition = e.toString();
+          debugPrint(_stringPosition);
+        });
+      }
+    });
+  }*/
+
 
   @override
   Widget build(BuildContext context) {
+    //_getCurrentLocation();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ThemeColors.AppBarColor,

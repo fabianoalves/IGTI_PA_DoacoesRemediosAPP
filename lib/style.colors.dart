@@ -6,6 +6,8 @@ class ThemeColors {
   static const Color BlackColor = Colors.black87;
   static const Color WhiteColor = Colors.white;
   static const Color PrimaryColor = Color.fromRGBO(39, 124, 154, 1);
+  static const Color SecondaryColor = Color.fromRGBO(117, 183, 235, 1);
+
   static const Color AppBarColor = Color.fromRGBO(39, 124, 154, 1);
   static const Color LabelInputForm = Color.fromRGBO(39, 124, 154, 1);
 }

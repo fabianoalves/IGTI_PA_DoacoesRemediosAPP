@@ -59,7 +59,7 @@ class _CadastroUsuarioPageState extends State<CadastroUsuarioPage> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Novo Cadastro'),
+          title: Text('Novo Cadastro2'),
           backgroundColor: ThemeColors.AppBarColor,
         ),
         body: Padding(

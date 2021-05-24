@@ -1,3 +1,4 @@
+import 'package:doacoes_remedios/components/custom_bottom_navigation_bar.dart';
 import 'package:doacoes_remedios/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -158,13 +159,11 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                     color: ThemeColors.PrimaryColor,
                   ),
                 ),
-
-                
-
               ],
             ),
           ),
-        )
+        ),
+        bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 1),
     );
   }
 }

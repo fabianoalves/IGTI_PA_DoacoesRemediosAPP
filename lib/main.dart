@@ -4,6 +4,7 @@ import 'package:doacoes_remedios/pages/instituicao_pesquisa.page.dart';
 import 'package:doacoes_remedios/pages/instituicao_pesquisa_resultado.page.dart';
 import 'package:doacoes_remedios/pages/map.page.dart';
 import 'package:doacoes_remedios/pages/splash.page.dart';
+import 'package:doacoes_remedios/pages/usuario.page.dart';
 import 'package:doacoes_remedios/pages/usuario_recuperar_senha.page.dart';
 import 'package:doacoes_remedios/routes/app_routes.dart';
 import 'package:doacoes_remedios/pages/usuario_cadastro.page.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       ),
       //home: SplashPage(),
       routes: {        
-        AppRoutes.HOME: (_) => LoginPage(),//LoginPage(),
+        AppRoutes.LOGIN: (_) => LoginPage(),//LoginPage(),
+        AppRoutes.USER: (_) => UsuarioPage(),
         AppRoutes.USER_FORM: (_) => UsuarioCadastroPage(),
         AppRoutes.INSTITUICAO: (_) => InstituicaoPage(),
         AppRoutes.INSTITUICAO_PESQUISA: (_) => InstituicaoPesquisaPage(),

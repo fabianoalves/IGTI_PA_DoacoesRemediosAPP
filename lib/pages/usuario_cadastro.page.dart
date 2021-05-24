@@ -61,7 +61,7 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Text('Novo Cadastro'),
+          title: Text('Editar Cadastro'),
           backgroundColor: ThemeColors.AppBarColor,
         ),
         body: Padding(
@@ -115,7 +115,7 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
                           // retorna um objeto do tipo Dialog
                           return AlertDialog(
                             title: new Text("Sucesso"),
-                            content: new Text("Cadastro realizado com sucesso"),
+                            content: new Text("Dados salvos com sucesso"),
                             actions: <Widget>[
                               // define os botões na base do dialogo
                               new FlatButton(

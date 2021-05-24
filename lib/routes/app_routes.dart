@@ -1,5 +1,6 @@
 class AppRoutes {
-  static const HOME = '/';
+  static const LOGIN = '/';
+  static const USER = "usuario";
   static const USER_FORM = '/usuario_cadastro';
   static const USER_RECUPERAR_SENHA = '/usuario_recuperar_senha';
   static const INSTITUICAO = '/instituicao';

@@ -1,3 +1,4 @@
+import 'package:doacoes_remedios/components/custom_bottom_navigation_bar.dart';
 import 'package:doacoes_remedios/models/instituicao.model.dart';
 import 'package:doacoes_remedios/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,8 @@ class _InstituicaoPesquisaResultPageState extends State<InstituicaoPesquisaResul
           itemCount: opcoes.length,
           itemBuilder: _instituicaoCard,
           
-        ),        
+        ),
+        bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 1),
     );
   }
 
