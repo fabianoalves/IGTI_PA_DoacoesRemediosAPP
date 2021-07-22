@@ -1,13 +1,15 @@
 class Instituicao {
   const Instituicao(
       {this.id,
-      this.titulo,
+      this.nome,
+      this.email,
       this.endereco,
       this.telefone,
       this.cep,
       this.status});
   final int id;
-  final String titulo;
+  final String nome;
+  final String email;
   final String endereco;
   final String telefone;
   final String cep;
@@ -16,7 +18,8 @@ class Instituicao {
   factory Instituicao.fromJson(Map<String, dynamic> json) {
     return Instituicao(
       id: json['id'],
-      titulo: json['titulo'],
+      nome: json['nome'],
+      email: json['email'],
       endereco: json['endereco'],
       telefone: json['telefone'],
       cep: json['cep'],
