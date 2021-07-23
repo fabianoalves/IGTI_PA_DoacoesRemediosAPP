@@ -8,18 +8,29 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 //
-Future<List<Instituicao>> pesquisar(BuildContext context) async {
-  List<Instituicao> lista = await obterIntituicoes();
+Future<List<Instituicao>> pesquisar(BuildContext context, String nome,
+    String bairro, String cidade, String uf) async {
+  //String nome = context.nome, String bairro, String cidade, String uf
+  List<Instituicao> lista = await obterIntituicoes(nome, bairro, cidade, uf);
   Navigator.of(context).pushNamed(
     AppRoutes.INSTITUICAO_PESQUISA_RESULT,
     arguments: {'resultado': lista},
   );
 }
 
-Future<List<Instituicao>> obterIntituicoes() async {
-  //String nome, String endereco, String cep, String telefone) async {
-  final http.Response response =
-      await http.get(Uri.parse(Config.APIEndpoint + '/instituicoes'));
+Future<List<Instituicao>> obterIntituicoes(
+    String nome, String bairro, String cidade, String uf) async {
+  String params = "";
+  if (nome != "") params += (params == "" ? "?" : "&") + "nome=" + nome;
+  if (bairro != "")
+    params += (params == "" ? "?" : "&") + "bairro=" + bairro.toUpperCase();
+  if (cidade != "") params += (params == "" ? "?" : "&") + "cidade=" + cidade;
+  if (uf != "") params += (params == "" ? "?" : "&") + "uf=" + uf;
+
+  String reqText = Config.APIEndpoint + '/instituicoes/' + params;
+
+  debugPrint("GET " + reqText);
+  final http.Response response = await http.get(Uri.parse(reqText));
   // debugPrint(response.statusCode.toString() +
   //     " - " +
   //     response.reasonPhrase +
@@ -58,8 +69,8 @@ class InstituicaoPesquisaPage extends StatefulWidget {
 class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
   final TextEditingController _nomeController = TextEditingController();
 
-  String dropdownEstadoValue = 'Estado';
-  String dropdownCidadeValue = 'Cidade';
+  String dropdownEstadoValue = 'SP';
+  String dropdownCidadeValue = 'São Paulo';
   String dropdownBairroValue = 'Bairro';
 
   @override
@@ -92,7 +103,7 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
               DropdownButtonFormField<String>(
                 items: [
                   DropdownMenuItem<String>(
-                    value: "Estado",
+                    value: "",
                     child: Text("Estado"),
                   ),
                   DropdownMenuItem<String>(
@@ -126,11 +137,11 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
               DropdownButtonFormField<String>(
                 items: [
                   DropdownMenuItem<String>(
-                    value: "Cidade",
+                    value: "",
                     child: Text("Cidade"),
                   ),
                   DropdownMenuItem<String>(
-                    value: "SP",
+                    value: "São Paulo",
                     child: Text("São Paulo"),
                   ),
                 ],
@@ -158,8 +169,22 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                 iconEnabledColor: Colors.black,
               ),
               DropdownButtonFormField<String>(
-                items: <String>['Bairro', 'Vila nova curuçá', 'Centro', 'Mooca']
-                    .map<DropdownMenuItem<String>>((String value) {
+                items: <String>[
+                  'Bairro',
+                  'Aclimação',
+                  'Água Rasa',
+                  'Alto da Mooca',
+                  'Barra Funda',
+                  'Bela Vista',
+                  'Cambuci',
+                  'Campos Eliseos',
+                  'Casa Verde',
+                  'Centro',
+                  'Morro dos Ingleses',
+                  'República',
+                  'Santa Cecília',
+                  'Santana',
+                ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -192,7 +217,12 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
               ButtonTheme(
                 height: 60.0,
                 child: RaisedButton(
-                  onPressed: () => pesquisar(context),
+                  onPressed: () => pesquisar(
+                      context,
+                      _nomeController.text,
+                      dropdownBairroValue,
+                      dropdownCidadeValue,
+                      dropdownEstadoValue),
                   child: Text(
                     "Pesquisar",
                     style: TextStyle(color: Colors.white),

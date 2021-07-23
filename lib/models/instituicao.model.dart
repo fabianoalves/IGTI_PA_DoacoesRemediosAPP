@@ -4,15 +4,26 @@ class Instituicao {
       this.nome,
       this.email,
       this.endereco,
+      this.bairro,
+      this.cidade,
+      this.uf,
       this.telefone,
       this.cep,
+      this.latitude,
+      this.longitude,
       this.status});
   final int id;
   final String nome;
   final String email;
   final String endereco;
+  final String bairro;
+  final String cidade;
+  final String uf;
+
   final String telefone;
   final String cep;
+  final double latitude;
+  final double longitude;
   final int status;
 
   factory Instituicao.fromJson(Map<String, dynamic> json) {
@@ -21,8 +32,13 @@ class Instituicao {
       nome: json['nome'],
       email: json['email'],
       endereco: json['endereco'],
+      bairro: json['bairro'],
+      cidade: json['cidade'],
+      uf: json['uf'],
       telefone: json['telefone'],
       cep: json['cep'],
+      latitude: json['latitude'],
+      longitude: json['longitude'],
       status: json['status'],
     );
   }

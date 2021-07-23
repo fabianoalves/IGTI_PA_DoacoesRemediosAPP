@@ -98,8 +98,14 @@ class _InstituicaoPesquisaResultPageState
               child: ButtonTheme(
                 height: 40.0,
                 child: RaisedButton(
-                  onPressed: () =>
-                      {Navigator.of(context).pushNamed(AppRoutes.MAPA)},
+                  onPressed: () => {
+                    Navigator.of(context).pushNamed(
+                      AppRoutes.MAPA,
+                      arguments: {'instituicao': resultado[index]},
+                    )
+
+                    //Navigator.of(context).pushNamed(AppRoutes.MAPA)
+                  },
                   child: Text(
                     "Ver Mapa",
                     style: TextStyle(color: Colors.white),

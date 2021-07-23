@@ -1,3 +1,4 @@
+import 'package:doacoes_remedios/models/instituicao.model.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -20,9 +21,9 @@ class _MapPageState extends State<MapPage> {
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
 
-    lat = -23.5023401;
-    long = -46.423008;
-    LatLng position = LatLng(lat, long);
+    //lat = -23.5023401;
+    //long = -46.423008;
+    LatLng position = LatLng(instituicao.latitude, instituicao.longitude);
     mapController.moveCamera(CameraUpdate.newLatLng(position));
     final Marker marker = Marker(
         markerId: new MarkerId("position-1"),
@@ -66,10 +67,13 @@ class _MapPageState extends State<MapPage> {
     return "dcsdc";
   }
 
+  Instituicao instituicao;
+
   @override
   Widget build(BuildContext context) {
-    _getCurrentLocation();
-
+    //_getCurrentLocation();
+    final arguments = ModalRoute.of(context).settings.arguments as Map;
+    instituicao = arguments["instituicao"];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ThemeColors.AppBarColor,
