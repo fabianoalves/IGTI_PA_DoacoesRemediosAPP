@@ -120,7 +120,7 @@ class _InstituicaoIndicacaoPageState extends State<InstituicaoIndicacaoPage> {
                   Divider(),
                   TextFormField(
                     controller: _telController,
-                    keyboardType: TextInputType.text,
+                    keyboardType: TextInputType.phone,
                     style: new TextStyle(
                         color: ThemeColors.BlackColor, fontSize: 20),
                     decoration: InputDecoration(
@@ -131,7 +131,7 @@ class _InstituicaoIndicacaoPageState extends State<InstituicaoIndicacaoPage> {
                   Divider(),
                   TextFormField(
                     controller: _cepController,
-                    keyboardType: TextInputType.text,
+                    keyboardType: TextInputType.number,
                     style: new TextStyle(
                         color: ThemeColors.BlackColor, fontSize: 20),
                     decoration: InputDecoration(

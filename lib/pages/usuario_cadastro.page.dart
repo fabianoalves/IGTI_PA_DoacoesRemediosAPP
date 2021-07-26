@@ -1,3 +1,5 @@
+//import 'dart:js_util';
+
 import 'package:doacoes_remedios/models/usuario.model.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -106,14 +108,25 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _senhaController = TextEditingController();
   //Future<Usuario> _futureAlbum;
+  Usuario usuario = new Usuario();
 
   @override
   Widget build(BuildContext context) {
+    String pageTitle = "Novo Cadastro";
+    final arguments = ModalRoute.of(context).settings.arguments as Map;
+    if (arguments != null && arguments.keys.contains("usuario")) {
+      usuario = arguments["usuario"];
+      pageTitle = "Editar Cadastro";
+      _nomeController.text = usuario.nome;
+      _emailController.text = usuario.email;
+      _senhaController.text = usuario.senha;
+    }
+
     return Scaffold(
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Text('Novo Cadastro'),
+          title: Text(pageTitle),
           backgroundColor: ThemeColors.AppBarColor,
         ),
         body: Padding(
@@ -166,7 +179,7 @@ class _UsuarioCadastroPageState extends State<UsuarioCadastroPage> {
                         _emailController.text,
                         _senhaController.text),
                     child: Text(
-                      "Cadastrar",
+                      "Salvar",
                       style: TextStyle(color: Colors.white),
                     ),
                     color: ThemeColors.PrimaryColor,

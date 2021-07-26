@@ -93,6 +93,7 @@ class _InstituicaoPesquisaResultPageState
               child: Text("Tel: " + resultado[index].telefone,
                   style: TextStyle(color: Colors.grey, fontSize: 18)),
             ),
+            Divider(),
             Align(
               alignment: Alignment.centerRight,
               child: ButtonTheme(
@@ -101,7 +102,9 @@ class _InstituicaoPesquisaResultPageState
                   onPressed: () => {
                     Navigator.of(context).pushNamed(
                       AppRoutes.MAPA,
-                      arguments: {'instituicao': resultado[index]},
+                      arguments: {
+                        'instituicoes': <Instituicao>[resultado[index]]
+                      },
                     )
 
                     //Navigator.of(context).pushNamed(AppRoutes.MAPA)

@@ -22,7 +22,7 @@ Future<List<Instituicao>> obterIntituicoes(
     String nome, String bairro, String cidade, String uf) async {
   String params = "";
   if (nome != "") params += (params == "" ? "?" : "&") + "nome=" + nome;
-  if (bairro != "")
+  if (bairro != "" && bairro != "Bairro")
     params += (params == "" ? "?" : "&") + "bairro=" + bairro.toUpperCase();
   if (cidade != "") params += (params == "" ? "?" : "&") + "cidade=" + cidade;
   if (uf != "") params += (params == "" ? "?" : "&") + "uf=" + uf;
@@ -89,17 +89,6 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              TextFormField(
-                controller: _nomeController,
-                autofocus: true,
-                keyboardType: TextInputType.text,
-                style:
-                    new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
-                decoration: InputDecoration(
-                    labelText: "Nome",
-                    labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
-              ),
-              Divider(),
               DropdownButtonFormField<String>(
                 items: [
                   DropdownMenuItem<String>(
@@ -212,6 +201,17 @@ class _InstituicaoPesquisaPageState extends State<InstituicaoPesquisaPage> {
                 isDense: true,
                 iconSize: 30.0,
                 iconEnabledColor: Colors.black,
+              ),
+              Divider(),
+              TextFormField(
+                controller: _nomeController,
+                autofocus: true,
+                keyboardType: TextInputType.text,
+                style:
+                    new TextStyle(color: ThemeColors.BlackColor, fontSize: 20),
+                decoration: InputDecoration(
+                    labelText: "Nome",
+                    labelStyle: TextStyle(color: ThemeColors.LabelInputForm)),
               ),
               Divider(),
               ButtonTheme(
